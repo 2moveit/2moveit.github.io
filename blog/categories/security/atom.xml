@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Security | Kai-Zen]]></title>
   <link href="http://2moveit.com/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-20T15:08:18+02:00</updated>
+  <updated>2014-07-20T15:22:11+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -24,7 +24,7 @@
 
 
 <ol>
-<li><p>Zuerst bei <a href="http://comodo.com">Comodo</a>{:target=&ldquo;_blank&rdquo;} ein kostenloses Zertifikat (Klasse 1) für die zu verschlüsselnde E-Mailadresse bestellen.</p></li>
+<li><p>Zuerst bei <a href="http://comodo.com">Comodo</a> ein kostenloses Zertifikat (Klasse 1) für die zu verschlüsselnde E-Mailadresse bestellen.</p></li>
 <li><p>Den Link in der E-Mail von Comodo öffnen. Dadurch wird das Zertifikat im jeweiligen Standardbrowser installieren.</p></li>
 <li><p>Als nächstes das Zertifikat exportieren und an einer sicheren Stelle aufbewahren, da ohne dieses Zertifikat die damit verschlüsselten E-Mails nicht mehr gelesen werden können. Beim Exportieren sollte ein sehr starkes Passwort verwendet werden, um auszuschließen, dass jemand Anderes dieses verwenden kann sollte es doch einmal verloren gehen:</p>
 
@@ -64,8 +64,8 @@ Ein Zertifikat E-Mail kann man bei iOS durch klick auf den Namen mit dem Signatu
 
 <h3>Warum sind Datenschutz und Privatsphäre wichtig?</h3>
 
-<p>Ein wirklich ansenlich gemachtest Video zeigt, <a href="http://youtu.be/iHlzsURb0WI">warum jeder lieber etwas zu verbergen hat</a>{:target=&ldquo;<em>blank&rdquo;}.
-<a href="http://youtu.be/iHlzsURb0WI"><img src="http://img.youtube.com/vi/iHlzsURb0WI/0.jpg" alt="Überwachung" /></a>{:target=&ldquo;</em>blank&rdquo;}</p>
+<p>Ein wirklich ansenlich gemachtest Video zeigt, <a href="http://youtu.be/iHlzsURb0WI">warum jeder lieber etwas zu verbergen hat</a>.
+<a href="http://youtu.be/iHlzsURb0WI"><img src="http://img.youtube.com/vi/iHlzsURb0WI/0.jpg" alt="Überwachung" /></a></p>
 
 <h3>S/MIME</h3>
 
@@ -81,7 +81,7 @@ Ein Zertifikat E-Mail kann man bei iOS durch klick auf den Namen mit dem Signatu
 
 <h3>Schlüsselrückruf</h3>
 
-<p>Sollte einmal ein Schlüssel verloren gehen, so kann man ihn unter Angabe des Rückrufpasswortes <a href="https://secure.comodo.com/products/!SecureEmailCertificate_Revoke">zurückrufen</a>{:target=&ldquo;_blank&rdquo;}. Diesem Zertifikat gilt dann nicht mehr als vertrauenswürdig.</p>
+<p>Sollte einmal ein Schlüssel verloren gehen, so kann man ihn unter Angabe des Rückrufpasswortes <a href="https://secure.comodo.com/products/!SecureEmailCertificate_Revoke">zurückrufen</a>. Diesem Zertifikat gilt dann nicht mehr als vertrauenswürdig.</p>
 
 <h2>Haftungsausschluss</h2>
 
