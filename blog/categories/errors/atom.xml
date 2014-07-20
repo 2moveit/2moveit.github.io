@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Errors | Kai-Zen]]></title>
   <link href="http://2moveit.com/blog/categories/errors/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-20T15:00:18+02:00</updated>
+  <updated>2014-07-20T15:08:18+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -35,10 +35,8 @@
     <id>http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token</id>
     <content type="html"><![CDATA[<h2>Problem</h2>
 
-<p>If you try to push a repository you may get the message:</p>
-
-<pre><code>"... syntax error near unexpected token '("
-</code></pre>
+<p>If you try to push a repository you may get the message:
+<blockquote><p>&ldquo;&hellip; syntax error near unexpected token &lsquo;(&rdquo;</p></blockquote></p>
 
 <!--more-->
 

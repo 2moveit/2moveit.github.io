@@ -4,7 +4,7 @@
   <title><![CDATA[Kai-Zen]]></title>
   <link href="http://2moveit.com/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-20T15:00:18+02:00</updated>
+  <updated>2014-07-20T15:08:18+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -164,8 +164,10 @@ Ein Zertifikat E-Mail kann man bei iOS durch klick auf den Namen mit dem Signatu
 
 <p>If you try to push a repository you may get the message:</p>
 
-<pre><code>"... syntax error near unexpected token '("
-</code></pre>
+<blockquote><p>&#8220;&#8230; syntax error near unexpected token &#8216;(&#8221;</p></blockquote>
+
+
+
 
 <!--more-->
 
