@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Errors | My Octopress Blog]]></title>
+  <link href="http://2moveit.github.io/blog/categories/errors/atom.xml" rel="self"/>
+  <link href="http://2moveit.github.io/"/>
+  <updated>2014-07-19T18:23:03+02:00</updated>
+  <id>http://2moveit.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Jenkins Startet Nach Update Nicht Mehr]]></title>
+    <link href="http://2moveit.github.io/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/"/>
+    <updated>2014-06-28T00:00:00+02:00</updated>
+    <id>http://2moveit.github.io/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr</id>
+    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
+
+<h2>Problem</h2>
+
+<p>Auf einem Windows Computer kann es vorkommen, dass Jenkins nach ein Update bei dem darauf folgenden Neustart nicht mehr startet.</p>
+
+<h2>Lösung</h2>
+
+<p>Erst in der Windows Ereignisanzeige die Protokolleinträge für Anwendungen und System löschen und darauf den Jenkins-Dienst neu starten.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Extensions: Syntax Error Near Unexpected Token]]></title>
+    <link href="http://2moveit.github.io/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/"/>
+    <updated>2014-05-17T00:00:00+02:00</updated>
+    <id>http://2moveit.github.io/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token</id>
+    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
+
+<h2>Problem</h2>
+
+<p>If you try to push a repository you may get the message:</p>
+
+<pre><code>"... syntax error near unexpected token '("
+</code></pre>
+
+<!--more-->
+
+
+<h2>Solution</h2>
+
+<p>Change the &ldquo;\\&rdquo; to just &ldquo;\&rdquo; in the file <strong>C:\Users&lt; UserName >\.gitconfig</strong></p>
+
+<h3>Wrong:</h3>
+
+<pre><code>helper = !\\\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\\\"
+</code></pre>
+
+<h3>Correct:</h3>
+
+<pre><code>helper = !\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\"
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

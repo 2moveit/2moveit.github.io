@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Batch | My Octopress Blog]]></title>
+  <link href="http://2moveit.github.io/blog/categories/batch/atom.xml" rel="self"/>
+  <link href="http://2moveit.github.io/"/>
+  <updated>2014-07-19T18:23:03+02:00</updated>
+  <id>http://2moveit.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Prevent Command Prompt's Auto Close]]></title>
+    <link href="http://2moveit.github.io/blog/2014/06/04/prevent-command-prompts-auto-close/"/>
+    <updated>2014-06-04T00:00:00+02:00</updated>
+    <id>http://2moveit.github.io/blog/2014/06/04/prevent-command-prompts-auto-close</id>
+    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
+
+<p>As I want to start a specific task of a rake script with a double-click in windows I had to created a batch file to start the task:
+{% highlight PowerShell %}
+rake -f rakefile.rb task_name
+{% endhighlight %}
+Either if the task fails or not the command window will close.</p>
+
+<p>To solve this you have to add <code>pause</code> and <code>call</code> the rake script. As I&rsquo;m just interested in the output in case of an error I check the errorlevel for it.
+{% highlight PowerShell %}
+call rake -f rakefile.rb unit_tests
+if %ERRORLEVEL% == 1 (</p>
+
+<pre><code>pause
+</code></pre>
+
+<p>)
+{% endhighlight %}</p>
+]]></content>
+  </entry>
+  
+</feed>
