@@ -4,7 +4,7 @@
   <title><![CDATA[Kai-Zen]]></title>
   <link href="http://2moveit.com/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-20T15:22:11+02:00</updated>
+  <updated>2014-07-20T16:12:33+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BricsCAD Does Not Load "Hello World" Command]]></title>
+    <link href="http://2moveit.com/blog/2014/07/20/bricscad-does-not-load-hello-world-command/"/>
+    <updated>2014-07-20T15:55:19+02:00</updated>
+    <id>http://2moveit.com/blog/2014/07/20/bricscad-does-not-load-hello-world-command</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
+
+<p>BricsCAD does not show the command after loading the assembly with NETLOAD.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="na">[CommandMethod(&quot;Go&quot;)]</span>
+</span><span class='line'><span class="k">public</span> <span class="k">void</span> <span class="nf">Go</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
+
+
+<h2>Solution</h2>
+
+<p>There is no API call in this file.
+At least one command has to do something with the BricsCAD API. E.g write something to the console, open a transaction or just update the screen.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="na">[CommandMethod(&quot;Go&quot;)]</span>
+</span><span class='line'><span class="k">public</span> <span class="k">void</span> <span class="nf">Go</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Bricscad</span><span class="p">.</span><span class="n">ApplicationServices</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="n">UpdateScreen</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Jenkins Startet Nach Update Nicht Mehr]]></title>
