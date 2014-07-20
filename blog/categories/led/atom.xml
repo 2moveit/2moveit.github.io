@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Led | My Octopress Blog]]></title>
-  <link href="http://2moveit.github.io/blog/categories/led/atom.xml" rel="self"/>
-  <link href="http://2moveit.github.io/"/>
-  <updated>2014-07-19T18:23:03+02:00</updated>
-  <id>http://2moveit.github.io/</id>
+  <title><![CDATA[Category: Led | Kai-Zen]]></title>
+  <link href="http://2moveit.com/blog/categories/led/atom.xml" rel="self"/>
+  <link href="http://2moveit.com/"/>
+  <updated>2014-07-20T15:00:18+02:00</updated>
+  <id>http://2moveit.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kai Timmermann]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,12 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Philips Hue Lampen Mit Bridge Koppeln]]></title>
-    <link href="http://2moveit.github.io/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/"/>
+    <link href="http://2moveit.com/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/"/>
     <updated>2014-06-19T00:00:00+02:00</updated>
-    <id>http://2moveit.github.io/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln</id>
-    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
-
-<p>Mit den Philips Hue Lampen kann man schöne Lichtstimmungen erzeugen, doch es ist nicht immer ganz einfach alle Lampen zu koppeln. Lampen der 3ten Generation (runde Fernbedienung) können mit der Bridge gekoppelt werden. Am einfachsten geht es indem man alle Lampen mit einer Fernbedienung koppelt und darauf die Daten an die Bridge sendet:</p>
+    <id>http://2moveit.com/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln</id>
+    <content type="html"><![CDATA[<p>Mit den Philips Hue Lampen kann man schöne Lichtstimmungen erzeugen, doch es ist nicht immer ganz einfach alle Lampen zu koppeln. Lampen der 3ten Generation (runde Fernbedienung) können mit der Bridge gekoppelt werden. Am einfachsten geht es indem man alle Lampen mit einer Fernbedienung koppelt und darauf die Daten an die Bridge sendet:</p>
 
 <!--more-->
 

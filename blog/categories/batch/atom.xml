@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Batch | My Octopress Blog]]></title>
-  <link href="http://2moveit.github.io/blog/categories/batch/atom.xml" rel="self"/>
-  <link href="http://2moveit.github.io/"/>
-  <updated>2014-07-19T18:23:03+02:00</updated>
-  <id>http://2moveit.github.io/</id>
+  <title><![CDATA[Category: Batch | Kai-Zen]]></title>
+  <link href="http://2moveit.com/blog/categories/batch/atom.xml" rel="self"/>
+  <link href="http://2moveit.com/"/>
+  <updated>2014-07-20T15:00:18+02:00</updated>
+  <id>http://2moveit.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kai Timmermann]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,27 +15,31 @@
   
   <entry>
     <title type="html"><![CDATA[Prevent Command Prompt's Auto Close]]></title>
-    <link href="http://2moveit.github.io/blog/2014/06/04/prevent-command-prompts-auto-close/"/>
+    <link href="http://2moveit.com/blog/2014/06/04/prevent-command-prompts-auto-close/"/>
     <updated>2014-06-04T00:00:00+02:00</updated>
-    <id>http://2moveit.github.io/blog/2014/06/04/prevent-command-prompts-auto-close</id>
-    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
-
-<p>As I want to start a specific task of a rake script with a double-click in windows I had to created a batch file to start the task:
-{% highlight PowerShell %}
-rake -f rakefile.rb task_name
-{% endhighlight %}
+    <id>http://2moveit.com/blog/2014/06/04/prevent-command-prompts-auto-close</id>
+    <content type="html"><![CDATA[<p>As I want to start a specific task of a rake script with a double-click in windows I had to created a batch file to start the task:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='powershell'><span class='line'><span class="n">rake</span> <span class="o">-f</span> <span class="n">rakefile</span><span class="p">.</span><span class="n">rb</span> <span class="n">task_name</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 Either if the task fails or not the command window will close.</p>
 
 <p>To solve this you have to add <code>pause</code> and <code>call</code> the rake script. As I&rsquo;m just interested in the output in case of an error I check the errorlevel for it.
-{% highlight PowerShell %}
-call rake -f rakefile.rb unit_tests
-if %ERRORLEVEL% == 1 (</p>
-
-<pre><code>pause
-</code></pre>
-
-<p>)
-{% endhighlight %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='powershell'><span class='line'><span class="n">call</span> <span class="n">rake</span> <span class="o">-f</span> <span class="n">rakefile</span><span class="p">.</span><span class="n">rb</span> <span class="n">unit_tests</span>
+</span><span class='line'><span class="k">if</span> <span class="k">%</span><span class="n">ERRORLEVEL</span><span class="p">%</span> <span class="p">==</span> <span class="n">1</span> <span class="p">(&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span><span class="n">pause</span>
+</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Led - Kai-Zen</title>
+  <title>Git Extensions: Syntax Error Near Unexpected Token - Kai-Zen</title>
   <meta name="author" content="Kai Timmermann">
 
   
-  <meta name="description" content="Category: led">
+  <meta name="description" content="">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://2moveit.com/blog/categories/led">
+  <link rel="canonical" href="http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Kai-Zen" type="application/atom+xml">
@@ -76,35 +76,106 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Led</h1>
+    
+      <h1 class="entry-title">Git Extensions: Syntax Error Near Unexpected Token</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-17T00:00:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h2>Problem</h2>
 
-  
-  <h2>2014</h2>
+<p>If you try to push a repository you may get the message:</p>
 
-<article>
-  
-<h1><a href="/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/">Philips Hue Lampen Mit Bridge Koppeln</a></h1>
-<time datetime="2014-06-19T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>19</span> <span class='year'>2014</span></time>
+<pre><code>"... syntax error near unexpected token '("
+</code></pre>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/led/'>led</a></span>
-</footer>
+<!--more-->
 
 
-</article>
+<h2>Solution</h2>
 
+<p>Change the &ldquo;&#92;&rdquo; to just &ldquo;\&rdquo; in the file <strong>C:\Users&lt; UserName >&#46;gitconfig</strong></p>
+
+<h3>Wrong:</h3>
+
+<pre><code>helper = !\\\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\\\"
+</code></pre>
+
+<h3>Correct:</h3>
+
+<pre><code>helper = !\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\"
+</code></pre>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Kai Timmermann</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-17T00:00:00+02:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/errors/'>errors</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/" data-via="" data-counturl="http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/30/e-mails-verschluesseln-mit-smime/" title="Next Post: E-Mails verschlüsseln mit S/MIME">E-Mails verschlüsseln mit S/MIME &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Errors | My Octopress Blog]]></title>
-  <link href="http://2moveit.github.io/blog/categories/errors/atom.xml" rel="self"/>
-  <link href="http://2moveit.github.io/"/>
-  <updated>2014-07-19T18:23:03+02:00</updated>
-  <id>http://2moveit.github.io/</id>
+  <title><![CDATA[Category: Errors | Kai-Zen]]></title>
+  <link href="http://2moveit.com/blog/categories/errors/atom.xml" rel="self"/>
+  <link href="http://2moveit.com/"/>
+  <updated>2014-07-20T15:00:18+02:00</updated>
+  <id>http://2moveit.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kai Timmermann]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,12 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Jenkins Startet Nach Update Nicht Mehr]]></title>
-    <link href="http://2moveit.github.io/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/"/>
+    <link href="http://2moveit.com/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/"/>
     <updated>2014-06-28T00:00:00+02:00</updated>
-    <id>http://2moveit.github.io/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr</id>
-    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
-
-<h2>Problem</h2>
+    <id>http://2moveit.com/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
 
 <p>Auf einem Windows Computer kann es vorkommen, dass Jenkins nach ein Update bei dem darauf folgenden Neustart nicht mehr startet.</p>
 
@@ -32,12 +30,10 @@
   
   <entry>
     <title type="html"><![CDATA[Git Extensions: Syntax Error Near Unexpected Token]]></title>
-    <link href="http://2moveit.github.io/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/"/>
+    <link href="http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/"/>
     <updated>2014-05-17T00:00:00+02:00</updated>
-    <id>http://2moveit.github.io/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token</id>
-    <content type="html"><![CDATA[<p>{% include JB/setup %}</p>
-
-<h2>Problem</h2>
+    <id>http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
 
 <p>If you try to push a repository you may get the message:</p>
 
