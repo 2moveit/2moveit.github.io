@@ -2,20 +2,56 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
+  <url>
+    <loc>http://2moveit.com/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/</loc>
+    <lastmod>2014-06-28T00:00:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
   
   <url>
-    <loc>http://2moveit.github.io/blog/archives/</loc>
-    <lastmod>2014-07-19T15:46:57+02:00</lastmod>
+    <loc>http://2moveit.com/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/</loc>
+    <lastmod>2014-06-19T00:00:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://2moveit.com/blog/2014/06/04/prevent-command-prompts-auto-close/</loc>
+    <lastmod>2014-06-04T00:00:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://2moveit.com/blog/2014/05/30/e-mails-verschluesseln-mit-smime/</loc>
+    <lastmod>2014-05-30T00:00:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/</loc>
+    <lastmod>2014-05-17T00:00:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://2moveit.com/blog/archives/</loc>
+    <lastmod>2014-07-20T15:22:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://2moveit.github.io/</loc>
-    <lastmod>2014-07-19T15:46:57+02:00</lastmod>
+    <loc>http://2moveit.com/</loc>
+    <lastmod>2014-07-20T15:22:11+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
+  
+  <url>
+    <loc>http://2moveit.com/google8dfbc5087929f07b.html</loc>
+    <lastmod>2014-07-19T15:37:1405777044Z</lastmod>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>

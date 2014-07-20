@@ -1,16 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://2moveit.github.io/atom.xml" rel="self"/>
-  <link href="http://2moveit.github.io/"/>
-  <updated>2014-07-19T15:46:57+02:00</updated>
-  <id>http://2moveit.github.io/</id>
+  <title><![CDATA[Kai-Zen]]></title>
+  <link href="http://2moveit.com/atom.xml" rel="self"/>
+  <link href="http://2moveit.com/"/>
+  <updated>2014-07-20T15:22:11+02:00</updated>
+  <id>http://2moveit.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kai Timmermann]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Jenkins Startet Nach Update Nicht Mehr]]></title>
+    <link href="http://2moveit.com/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/"/>
+    <updated>2014-06-28T00:00:00+02:00</updated>
+    <id>http://2moveit.com/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
+
+<p>Auf einem Windows Computer kann es vorkommen, dass Jenkins nach ein Update bei dem darauf folgenden Neustart nicht mehr startet.</p>
+
+<h2>Lösung</h2>
+
+<p>Erst in der Windows Ereignisanzeige die Protokolleinträge für Anwendungen und System löschen und darauf den Jenkins-Dienst neu starten.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Philips Hue Lampen Mit Bridge Koppeln]]></title>
+    <link href="http://2moveit.com/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/"/>
+    <updated>2014-06-19T00:00:00+02:00</updated>
+    <id>http://2moveit.com/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln</id>
+    <content type="html"><![CDATA[<p>Mit den Philips Hue Lampen kann man schöne Lichtstimmungen erzeugen, doch es ist nicht immer ganz einfach alle Lampen zu koppeln. Lampen der 3ten Generation (runde Fernbedienung) können mit der Bridge gekoppelt werden. Am einfachsten geht es indem man alle Lampen mit einer Fernbedienung koppelt und darauf die Daten an die Bridge sendet:</p>
+
+<!--more-->
+
+
+<ol>
+<li>Bridge Link Taste drücken</li>
+<li>Fav 1 Taste und Einschalttaste der Fernbedienung in der Nähe der Bridge gleichzeitig drücken und halten. Die Bridge Leuchte blinkt und schaltet sich aus.</li>
+<li>Einschalttaste der Fernbedienung jeweils in der Nähe der einzelnen, am Strom angeschlossenen, Lampen drücken und halten bis die jeweilige Lampe aufleuchtet-</li>
+<li>Bridge Link Taste drücken.</li>
+<li>Einschalter der Fernbedienung gedrückhalten (nicht mehr die Fav 1 Taste!) bis die Bridge blinkt.</li>
+<li>Hue App starten und ggf. nach der Bridge &ldquo;suchen&rdquo;. Dazu ggf auf Nachfrage nocheinmal die Bridge Links Taste drücken. Lampen ebenfalls suchen lassen.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Prevent Command Prompt's Auto Close]]></title>
+    <link href="http://2moveit.com/blog/2014/06/04/prevent-command-prompts-auto-close/"/>
+    <updated>2014-06-04T00:00:00+02:00</updated>
+    <id>http://2moveit.com/blog/2014/06/04/prevent-command-prompts-auto-close</id>
+    <content type="html"><![CDATA[<p>As I want to start a specific task of a rake script with a double-click in windows I had to created a batch file to start the task:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='powershell'><span class='line'><span class="n">rake</span> <span class="o">-f</span> <span class="n">rakefile</span><span class="p">.</span><span class="n">rb</span> <span class="n">task_name</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Either if the task fails or not the command window will close.</p>
+
+<p>To solve this you have to add <code>pause</code> and <code>call</code> the rake script. As I&rsquo;m just interested in the output in case of an error I check the errorlevel for it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='powershell'><span class='line'><span class="n">call</span> <span class="n">rake</span> <span class="o">-f</span> <span class="n">rakefile</span><span class="p">.</span><span class="n">rb</span> <span class="n">unit_tests</span>
+</span><span class='line'><span class="k">if</span> <span class="k">%</span><span class="n">ERRORLEVEL</span><span class="p">%</span> <span class="p">==</span> <span class="n">1</span> <span class="p">(</span>
+</span><span class='line'>  <span class="n">pause</span>
+</span><span class='line'><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[E-Mails Verschlüsseln Mit S/MIME]]></title>
+    <link href="http://2moveit.com/blog/2014/05/30/e-mails-verschluesseln-mit-smime/"/>
+    <updated>2014-05-30T00:00:00+02:00</updated>
+    <id>http://2moveit.com/blog/2014/05/30/e-mails-verschluesseln-mit-smime</id>
+    <content type="html"><![CDATA[<p>Unverschlüsselte E-Mails sind wie Postkarten. Jeder könnte sie lesen. Auch wenn keine wichtigen Informationen in ihnen stehen, so sollte man seine Privatsphäre nicht einfach ohne Weiteres aufgeben. Viel zu viel steht auf dem Spiel, denn jeder hat schon mal den paraphrasiert Satz von Benjamin Franklin gehört: „Wer die Freiheit aufgibt um Sicherheit zu gewinnen, der wird am Ende beides verlieren.“ Dabei ist es garnicht schwer oder viel Aufwand E-Mails zu verschlüsseln, wie die nächsten sechs Schritte zeigen.</p>
+
+<!--more-->
+
+
+<ol>
+<li><p>Zuerst bei <a href="http://comodo.com">Comodo</a> ein kostenloses Zertifikat (Klasse 1) für die zu verschlüsselnde E-Mailadresse bestellen.</p></li>
+<li><p>Den Link in der E-Mail von Comodo öffnen. Dadurch wird das Zertifikat im jeweiligen Standardbrowser installieren.</p></li>
+<li><p>Als nächstes das Zertifikat exportieren und an einer sicheren Stelle aufbewahren, da ohne dieses Zertifikat die damit verschlüsselten E-Mails nicht mehr gelesen werden können. Beim Exportieren sollte ein sehr starkes Passwort verwendet werden, um auszuschließen, dass jemand Anderes dieses verwenden kann sollte es doch einmal verloren gehen:</p>
+
+<h3>Firefox</h3>
+
+<ul>
+<li><code>Extras</code> &ndash;> <code>Einstellungen</code> &ndash;> <code>Erweitert</code> &ndash;> <code>Zertifikate anzeigen</code></li>
+<li>Eigenes Zertifikat unter <code>Ihre Zertifikate</code> auswählen und als PKCS12 Datei (*.p12) <code>Sichern...</code>. Dabei ein starkes Passwort verwenden, da dieses der <a href="#PKV"><em>Private Schlüssel</em></a> ist.</li>
+<li>Zusätzlich unter <code>Zertifizierungsstellen</code> das <em>COMODO Client Athentication and Secure Email CA Zertifikat</em> unter <em>The USERTRUST Network</em> <code>Exportieren...</code> und als X.509-Zertifikat (.crt) speichern.</li>
+</ul>
+
+
+<h3>Internet Explorer</h3>
+
+<ul>
+<li><code>Internetoptionen</code> &ndash;> <code>Inhalte</code> &ndash;> <code>Zertifikate</code></li>
+<li>Unter <code>Eigene Zertifikate</code> das eigenes Zertifikat <code>Exportieren</code> &ndash;> <code>Weiter</code> &ndash;> <em>Ja, privaten Schlüssel exportieren</em> auswählen und <code>Weiter</code> &ndash;> <em>Privater Informationsaustausch -PKCS #12 (.PFX)</em> auswählen, <em>Wenn möglich, alle Zertifikate im Zertifizierungspfad einbeziehen</em> aktivieren und <code>Weiter</code> &ndash;> Starkes Kennwort festlegen, da der <a href="#PKV"><em>Private Schlüssel</em></a> mit exportiert wird und <code>Weiter</code> &ndash;> Dateiname wählen und <code>Weiter</code> &ndash;> <code>Fertig stellen</code></li>
+<li>Zusätzlich unter <code>Zwischenzertifizierungsstellen</code> das <em>COMODO Client Athentication and Secure Email CA Zertifikat</em> <code>Exportieren...</code> und als X.509-Zertifikat (.crt) speichern.</li>
+</ul>
+
+
+<p>Neben der Sicherung des Zertifikates wird das exportierte Zertifikat benötigt, um auf anderen Geräten das selbe Zertifikat verwenden zu können. Das Comodo Zertifikat wird nur benötigt wenn die Comodo Zertifizierungsauthorität noch nicht auf einem Gerät vorhanden ist, wie z.B. dem iPhone.</p></li>
+<li><p>Exportierte Zertifikate an eigene E-Mailadresse senden.</p></li>
+<li><p>E-Mail auf dem Smartphone/Tablet öffnen und Zertifikat durch anklicken installieren. Das eigene Zertifikat erscheint als vertrauenswürdig sobald Comodo-Zertifikat installiert ist. <a href="#CA">Weitere Informationen</a></p></li>
+<li><p>In den iOS <code>Einstellungen</code> des E-Mailkontos unter <code>Erweiterte Einstellungen</code>, ganz unten, <code>S/MIME</code> aktivieren (signieren und verschlüsseln)</p></li>
+</ol>
+
+
+<p>Das wars. Wenn man jetzt eine Email versendet, dann wird sie signiert. Der Empfänger sieht an einem Icon (Outlook/iOS), dass die E-Mail nicht manipuliert wurde, vorausgesetzt ein Angreifer ist nicht an das private Zertifikat gelangt.</p>
+
+<p>Besitzt ihr das öffentliche Zertifikat einer E-Mailadresse, so wird die Nachricht der E-Mail automatisch verschlüsselt und nur der Empfänger kann sie entschlüsseln , da er ja den privaten Schlüssel besitzt.</p>
+
+<p>Dar öffentliche Zertifikat kann immer an die E-Mail gehangen werden. Die Vertrauenswürdigkeit wird ja von Comodo bestätigt und so kann jeder mit eurem öffentlichen Zertifikat verschlüsselte Nachrichten an euch senden.
+Ein Zertifikat E-Mail kann man bei iOS durch klick auf den Namen mit dem Signaturicon vertrauen. Bei Outlook ist darauf achten, dass der Kontakt auch als Kontakt gespeichert ist. Andernfalls wird das Zertifikat desjenigen nicht gespeichert und man kann keine Nachrichten an denjenigen verschlüsselt versenden.</p>
+
+<h2>Weitere Infos</h2>
+
+<h3>Warum sind Datenschutz und Privatsphäre wichtig?</h3>
+
+<p>Ein wirklich ansenlich gemachtest Video zeigt, <a href="http://youtu.be/iHlzsURb0WI">warum jeder lieber etwas zu verbergen hat</a>.
+<a href="http://youtu.be/iHlzsURb0WI"><img src="http://img.youtube.com/vi/iHlzsURb0WI/0.jpg" alt="Überwachung" /></a></p>
+
+<h3>S/MIME</h3>
+
+<p>S/MIME arbeitet nach dem Public-Key-Verfahren. Es wird damit jedoch nur der Inhalt der E-Mail, jedoch nicht der Header und die Metadaten, verschlüsselt. Da im Header die Betreffzeile steht, sollten dort keine wichtigen Daten stehen. Natürlich hilft alles nichts wenn z.B. durch einen Trojaner oder Keylogger die Eingaben angefangen werden.</p>
+
+<h3><a name="PKV"></a>Public-Key Verfahren</h3>
+
+<p>Beim Public-Key-Verfahren werden zwei Schlüssel verwendet. Ein privater Schlüssel und ein öffentliche Schlüssel bilden ein sogenanntes Schlüsselpaar. Der öffentliche Schlüssel kann ohne Bedenken an jeden verteilt werden. Er wird dazuverwendet um Nachrichten an den Besitzer des zugehörigen privaten Schlüssels zu verschlüsseln. Nur der Besitzer des privaten Schlüssels kann die verschlüsselte Nachricht wieder entschlüsseln. Damit man auch den richtigen öffentlichen Schlüssel von jemanden nutzt, und nicht den eines Angreifers, vertraut man nur Schlüsseln, die durch Andersrum kann mit dem privaten Schlüssel eine Nachricht signiert werden. Mit dem öffentlichen Schlüssel kann nun überprüft werden ob die Nachricht wirklich vom Absender stammt und nicht manipuliert wurde.</p>
+
+<h3><a name="CA"></a>Comodo, Certification Authority (CA) und das Web of trust</h3>
+
+<p>Comodo dient sozusagen als Bürge und bestätigt mit dem Klasse 1 Zertifikat, dass es diese E-Mailadresse gibt, denn Comodo hat die E-Mail für das herunterladen des eigenen Zertigikates an diese E-Mailadresse gesendet. Das Zertifikat welches man bekommt ist mit dem Privaten Schlüssel, den nur Comodo besitzt, signiert. Als CA ist das Comodo Zertifikat in der Regel schon auf dem Computer installiert und es wird diesem vertraut. Andernfalls muss dieses Zertifikat installiert und ihm vertraut werden. Zertifikate, die von Comodo signiert wurden, wird  darauf automatisch vertraut. Prüft man einen manuell den Fingerprint eines Zertifikates, so kann man einem Zertifikat auch manuell vertrauen und ggf. einstellen, dass Zertifikate, die mit diesem Zertifikat signiert wurden ebenfalls vertraut werden kann. So kann man ein Netzwerk des Vertrauens aufbauen.</p>
+
+<h3>Schlüsselrückruf</h3>
+
+<p>Sollte einmal ein Schlüssel verloren gehen, so kann man ihn unter Angabe des Rückrufpasswortes <a href="https://secure.comodo.com/products/!SecureEmailCertificate_Revoke">zurückrufen</a>. Diesem Zertifikat gilt dann nicht mehr als vertrauenswürdig.</p>
+
+<h2>Haftungsausschluss</h2>
+
+<p>Diese Dokumentation ist nach bestem Wissen und Gewissen erstellt worden, stellt die Verschlüssellung jedoch vereinfacht dar, um möglichst jedem zuermöglichen eine E-Mail Verschlüsselung einzurichten. 100% Sicherheit gibt es nicht. Insbesondere durch Fehlverhalten wie der Verlust des Privatenschlüssels etc. kann dieser Schutz ausgehebelt werde. Die Anwendung der Anleitung geschieht auf, eigene Gefahr. Der Autor kann nicht auf Grund von Fehlern in der Anleitung für etwaige Schäden haftbar gemacht werden.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Extensions: Syntax Error Near Unexpected Token]]></title>
+    <link href="http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/"/>
+    <updated>2014-05-17T00:00:00+02:00</updated>
+    <id>http://2moveit.com/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
+
+<p>If you try to push a repository you may get the message:</p>
+
+<blockquote><p>&#8220;&#8230; syntax error near unexpected token &#8216;(&#8221;</p></blockquote>
+
+
+
+
+<!--more-->
+
+
+<h2>Solution</h2>
+
+<p>Change the &ldquo;&#92;&rdquo; to just &ldquo;\&rdquo; in the file <strong>C:\Users&lt; UserName >&#46;gitconfig</strong></p>
+
+<h3>Wrong:</h3>
+
+<pre><code>helper = !\\\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\\\"
+</code></pre>
+
+<h3>Correct:</h3>
+
+<pre><code>helper = !\"C:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\"
+</code></pre>
+]]></content>
+  </entry>
   
 </feed>

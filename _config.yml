@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://2moveit.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://2moveit.com
+title: Kai-Zen
+subtitle: Knowledge Base
+author: Kai Timmermann
 simple_search: https://www.google.com/search
 description:
 
@@ -95,7 +95,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: 002833925732597263774:qovu5vgdudu
 
 # Facebook Like
 facebook_like: false
