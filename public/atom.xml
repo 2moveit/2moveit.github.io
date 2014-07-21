@@ -4,7 +4,7 @@
   <title><![CDATA[Kai-Zen]]></title>
   <link href="http://2moveit.com/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-20T16:27:08+02:00</updated>
+  <updated>2014-07-21T22:31:27+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -12,6 +12,96 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use One Code Base for AutoCAD and BricCAD]]></title>
+    <link href="http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-briccad/"/>
+    <updated>2014-07-21T21:50:47+02:00</updated>
+    <id>http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-briccad</id>
+    <content type="html"><![CDATA[<p><a href="https://www.bricsys.com">BricsCAD</a> form BricsSys supports the same API as <a href="http://www.autodesk.com/products/autocad/overview">AutoCAD</a> from Autodesk.
+Same API but not the same interface. So how is it possible to use just one code base and support both cad systems?</p>
+
+<p>First create a configuration for AutoCAD <code>Debug</code> and BricsCAD <code>DebugBricsCAD</code>. This will make it easy to start either AutoCAD or BricsCAD from Visual Studio as you can define which program should start in the project properties:
+<img class="center" src="http://2moveit.com/images/posts/2014-07-21Settings.png">
+To switch the interfaces in you source code you have to change the using statements depending on the cad system you want to use.
+You can manage this with preprocessor statements:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="cp">#if BRICSCAD</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Teigha.DatabaseServices</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Teigha.Runtime</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Teigha.Geometry</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">using</span> <span class="nn">Bricscad.ApplicationServices</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Bricscad.Runtime</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Bricscad.EditorInput</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Application</span> <span class="p">=</span> <span class="n">Bricscad</span><span class="p">.</span><span class="n">ApplicationServices</span><span class="p">.</span><span class="n">Application</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Platform</span> <span class="p">=</span> <span class="n">Bricscad</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">PlatformDB</span> <span class="p">=</span> <span class="n">Teigha</span><span class="p">;</span>
+</span><span class='line'><span class="cp">#else</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Autodesk.AutoCAD.DatabaseServices</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Autodesk.AutoCAD.Runtime</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Autodesk.AutoCAD.Geometry</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Autodesk.AutoCAD.ApplicationServices</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Autodesk.AutoCAD.EditorInput</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Autodesk.AutoCAD.Windows</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Application</span> <span class="p">=</span> <span class="n">Autodesk</span><span class="p">.</span><span class="n">AutoCAD</span><span class="p">.</span><span class="n">ApplicationServices</span><span class="p">.</span><span class="n">Core</span><span class="p">.</span><span class="n">Application</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">Platform</span> <span class="p">=</span> <span class="n">Autodesk</span><span class="p">.</span><span class="n">AutoCAD</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">PlatformDB</span> <span class="p">=</span> <span class="n">Autodesk</span><span class="p">.</span><span class="n">AutoCAD</span><span class="p">;</span>
+</span><span class='line'><span class="cp">#endif</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To switch the configuration you need to define the symbol BRICSCAD.
+Go to <code>project properties</code> &ndash;> <code>Build</code> &ndash;> <code>General</code> &ndash;> <code>Conditional compilation symbols</code> and add <code>BRICSCAD</code> there. Make sure that the configuration <code>DebugBricsCAD</code> is selected. If you like you can add <code>AUTOCAD</code> as conditional compilation symbol to the <code>Debug</code> configuration. As we do not check this value it is not required here but if you later want to support <a href="http://www.nanocad.com">nanoCAD</a> from neosoft you might need it for the <code>#elseif</code>.
+<img class="center" src="http://2moveit.com/images/posts/2014-07-21Constant.png">
+By doing this the conditional compilation symbol is added in the project file (.proj) to the tag <code>&lt;DefineConstants&gt;</code> and it will be used for the preprocessor statements.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;PropertyGroup</span> <span class="na">Condition=</span><span class="s">&quot;&#39;$(Configuration)|$(Platform)&#39; == &#39;DebugBricsCAD|AnyCPU&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;DebugSymbols&gt;</span>true<span class="nt">&lt;/DebugSymbols&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;OutputPath&gt;</span>bin\DebugBricsCAD\<span class="nt">&lt;/OutputPath&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;DefineConstants&gt;</span>TRACE;DEBUG;BRICSCAD<span class="nt">&lt;/DefineConstants&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;DebugType&gt;</span>full<span class="nt">&lt;/DebugType&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;PlatformTarget&gt;</span>AnyCPU<span class="nt">&lt;/PlatformTarget&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;ErrorReport&gt;</span>prompt<span class="nt">&lt;/ErrorReport&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;CodeAnalysisRuleSet&gt;</span>MinimumRecommendedRules.ruleset<span class="nt">&lt;/CodeAnalysisRuleSet&gt;</span>
+</span><span class='line'><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> Now you can start your implementation with one code base and start the cad systems as you like by just switching the configuration <code>Debug</code> and <code>DebugBricsCAD</code>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BricsCAD Does Not Load "Hello World" Command]]></title>
