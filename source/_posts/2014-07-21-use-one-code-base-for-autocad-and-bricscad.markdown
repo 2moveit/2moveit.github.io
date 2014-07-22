@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use one code base for AutoCAD and BricCAD"
+title: "Use one code base for AutoCAD and BricsCAD"
 date: 2014-07-21 21:50:47 +0200
 comments: true
 categories: BricsCAD
@@ -12,7 +12,7 @@ First create a configuration for AutoCAD `Debug` and BricsCAD `DebugBricsCAD`. T
 {% img center /images/posts/2014-07-21Settings.png %}
 To switch the interfaces in you source code you have to change the using statements depending on the cad system you want to use.
 You can manage this with preprocessor statements:
-{% codeblock lang:csharp %}
+{% codeblock test lang:csharp %}
 #if BRICSCAD
 using Teigha.DatabaseServices;
 using Teigha.Runtime;
