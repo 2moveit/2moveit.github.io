@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Kai-Zen</title>
+  <title>Use a Condition to Copy Just Specific Assemblies - Kai-Zen</title>
   <meta name="author" content="Kai Timmermann">
 
   
-  <meta name="description" content="Blog Archive 2014 Use a Condition to Copy Just Specific Assemblies
-Jul 22 2014 posted in msbuild Use One Code Base for AutoCAD and BricsCAD
-Jul 21 &hellip;">
+  <meta name="description" content="In my previous post I showed how to use conditional compilation symbols to switch between using statements for AutoCAD and BricsCAD. For both system &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Jul 21 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://2moveit.com/blog/archives">
+  <link rel="canonical" href="http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Kai-Zen" type="application/atom+xml">
@@ -79,133 +77,99 @@ Jul 21 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Use a Condition to Copy Just Specific Assemblies</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-22T20:13:17+02:00" pubdate data-updated="true">Jul 22<sup>nd</sup>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>In my <a href="./blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/">previous post</a> I showed how to use conditional compilation symbols to switch between using statements for AutoCAD and BricsCAD. For both system the interface assemblies are referenced and <code>copy local</code> is set to <code>false</code>.
+In a similar case where <code>copy local</code> is set to <code>true</code> you will notice that the referenced assemblies of both configuration are copied into the output directory. As we want to switch the whole system this isn&rsquo;t what we want.
+To avoid this you can use a condition so that just the assemblies of one configuration will be in you output directory.</p>
 
-  
-  <h2>2014</h2>
+<p>Unload the project and open it in the editor window. Then add the condition to check the <code>DefineConstants</code> and to decide if the assembly will be included or not:</p>
 
-<article>
-  
-<h1><a href="/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/">Use a Condition to Copy Just Specific Assemblies</a></h1>
-<time datetime="2014-07-22T20:13:17+02:00" pubdate><span class='month'>Jul</span> <span class='day'>22</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/msbuild/'>msbuild</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/">Use One Code Base for AutoCAD and BricsCAD</a></h1>
-<time datetime="2014-07-21T21:50:47+02:00" pubdate><span class='month'>Jul</span> <span class='day'>21</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/bricscad/'>bricscad</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/07/20/bricscad-does-not-load-hello-world-command/">BricsCAD Does Not Load &#8220;Hello World&#8221; Command</a></h1>
-<time datetime="2014-07-20T15:55:19+02:00" pubdate><span class='month'>Jul</span> <span class='day'>20</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/bricscad/'>bricscad</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/">Jenkins Startet Nach Update Nicht Mehr</a></h1>
-<time datetime="2014-06-28T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>28</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/errors/'>errors</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/">Philips Hue Lampen Mit Bridge Koppeln</a></h1>
-<time datetime="2014-06-19T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>19</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/led/'>led</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/06/04/prevent-command-prompts-auto-close/">Prevent Command Prompt&#8217;s Auto Close</a></h1>
-<time datetime="2014-06-04T00:00:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>04</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/batch/'>batch</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/05/30/e-mails-verschluesseln-mit-smime/">E-Mails Verschlüsseln Mit S/MIME</a></h1>
-<time datetime="2014-05-30T00:00:00+02:00" pubdate><span class='month'>May</span> <span class='day'>30</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/security/'>security</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/05/17/Git_Extensions_Syntax_error_near_inexpected_token/">Git Extensions: Syntax Error Near Unexpected Token</a></h1>
-<time datetime="2014-05-17T00:00:00+02:00" pubdate><span class='month'>May</span> <span class='day'>17</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/errors/'>errors</a></span>
-</footer>
-
-
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD)) Include=&quot;</span><span class="err">BrxMgd&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;HintPath&gt;</span>lib\BrxMgd.dll<span class="nt">&lt;/HintPath&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;Private&gt;</span>False<span class="nt">&lt;/Private&gt;</span>
+</span><span class='line'><span class="nt">&lt;/Reference&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Kai Timmermann</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-22T20:13:17+02:00" pubdate data-updated="true">Jul 22<sup>nd</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/msbuild/'>msbuild</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/" data-via="" data-counturl="http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/" title="Previous Post: Use one code base for AutoCAD and BricsCAD">&laquo; Use one code base for AutoCAD and BricsCAD</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

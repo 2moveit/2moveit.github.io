@@ -3,7 +3,13 @@
   
   
   <url>
-    <loc>http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-briccad/</loc>
+    <loc>http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/</loc>
+    <lastmod>2014-07-22T20:13:17+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/</loc>
     <lastmod>2014-07-21T21:50:47+02:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -47,14 +53,14 @@
   
   <url>
     <loc>http://2moveit.com/blog/archives/</loc>
-    <lastmod>2014-07-21T22:31:27+02:00</lastmod>
+    <lastmod>2014-07-22T20:27:25+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://2moveit.com/</loc>
-    <lastmod>2014-07-21T22:31:27+02:00</lastmod>
+    <lastmod>2014-07-22T20:27:25+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

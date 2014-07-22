@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Msbuild | Kai-Zen]]></title>
+  <link href="http://2moveit.com/blog/categories/msbuild/atom.xml" rel="self"/>
+  <link href="http://2moveit.com/"/>
+  <updated>2014-07-22T20:27:25+02:00</updated>
+  <id>http://2moveit.com/</id>
+  <author>
+    <name><![CDATA[Kai Timmermann]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Use a Condition to Copy Just Specific Assemblies]]></title>
+    <link href="http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/"/>
+    <updated>2014-07-22T20:13:17+02:00</updated>
+    <id>http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies</id>
+    <content type="html"><![CDATA[<p>In my <a href="./blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/">previous post</a> I showed how to use conditional compilation symbols to switch between using statements for AutoCAD and BricsCAD. For both system the interface assemblies are referenced and <code>copy local</code> is set to <code>false</code>.
+In a similar case where <code>copy local</code> is set to <code>true</code> you will notice that the referenced assemblies of both configuration are copied into the output directory. As we want to switch the whole system this isn&rsquo;t what we want.
+To avoid this you can use a condition so that just the assemblies of one configuration will be in you output directory.</p>
+
+<p>Unload the project and open it in the editor window. Then add the condition to check the <code>DefineConstants</code> and to decide if the assembly will be included or not:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD)) Include=&quot;</span><span class="err">BrxMgd&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>HintPath<span class="ni">&amp;gt;</span>lib\BrxMgd.dll<span class="ni">&amp;lt;</span>/HintPath<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>Private<span class="ni">&amp;gt;</span>False<span class="ni">&amp;lt;</span>/Private<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/Reference&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

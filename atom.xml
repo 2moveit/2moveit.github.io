@@ -4,7 +4,7 @@
   <title><![CDATA[Kai-Zen]]></title>
   <link href="http://2moveit.com/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-21T22:31:27+02:00</updated>
+  <updated>2014-07-22T20:27:25+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -14,10 +14,34 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Use One Code Base for AutoCAD and BricCAD]]></title>
-    <link href="http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-briccad/"/>
+    <title type="html"><![CDATA[Use a Condition to Copy Just Specific Assemblies]]></title>
+    <link href="http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/"/>
+    <updated>2014-07-22T20:13:17+02:00</updated>
+    <id>http://2moveit.com/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies</id>
+    <content type="html"><![CDATA[<p>In my <a href="./blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/">previous post</a> I showed how to use conditional compilation symbols to switch between using statements for AutoCAD and BricsCAD. For both system the interface assemblies are referenced and <code>copy local</code> is set to <code>false</code>.
+In a similar case where <code>copy local</code> is set to <code>true</code> you will notice that the referenced assemblies of both configuration are copied into the output directory. As we want to switch the whole system this isn&rsquo;t what we want.
+To avoid this you can use a condition so that just the assemblies of one configuration will be in you output directory.</p>
+
+<p>Unload the project and open it in the editor window. Then add the condition to check the <code>DefineConstants</code> and to decide if the assembly will be included or not:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD)) Include=&quot;</span><span class="err">BrxMgd&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;HintPath&gt;</span>lib\BrxMgd.dll<span class="nt">&lt;/HintPath&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;Private&gt;</span>False<span class="nt">&lt;/Private&gt;</span>
+</span><span class='line'><span class="nt">&lt;/Reference&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use One Code Base for AutoCAD and BricsCAD]]></title>
+    <link href="http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/"/>
     <updated>2014-07-21T21:50:47+02:00</updated>
-    <id>http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-briccad</id>
+    <id>http://2moveit.com/blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad</id>
     <content type="html"><![CDATA[<p><a href="https://www.bricsys.com">BricsCAD</a> form BricsSys supports the same API as <a href="http://www.autodesk.com/products/autocad/overview">AutoCAD</a> from Autodesk.
 Same API but not the same interface. So how is it possible to use just one code base and support both cad systems?</p>
 
@@ -26,7 +50,8 @@ Same API but not the same interface. So how is it possible to use just one code 
 To switch the interfaces in you source code you have to change the using statements depending on the cad system you want to use.
 You can manage this with preprocessor statements:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>test </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
