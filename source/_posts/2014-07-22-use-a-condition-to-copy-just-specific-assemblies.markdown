@@ -11,7 +11,7 @@ To avoid this you can use a condition so that just the assemblies of one configu
 
 Unload the project and open it in the editor window. Then add the condition to check the `DefineConstants` and to decide if the assembly will be included or not:
 {% codeblock lang:xml %}
- <Reference Condition="$(DefineConstants.Contains(BRICSCAD)) Include="BrxMgd">
+ <Reference Condition="$(DefineConstants.Contains(BRICSCAD))" Include="BrxMgd">
     <HintPath>lib\BrxMgd.dll</HintPath>
     <Private>False</Private>
 </Reference>
