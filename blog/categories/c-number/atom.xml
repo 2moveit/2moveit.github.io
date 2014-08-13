@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C# | Kai-Zen]]></title>
+  <link href="http://2moveit.com/blog/categories/c-number/atom.xml" rel="self"/>
+  <link href="http://2moveit.com/"/>
+  <updated>2014-08-13T22:21:24+02:00</updated>
+  <id>http://2moveit.com/</id>
+  <author>
+    <name><![CDATA[Kai Timmermann]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Change DebugType in Multiple C# projects.rb]]></title>
+    <link href="http://2moveit.com/blog/2014/08/13/change-debugtype-in-multiplecsproj/"/>
+    <updated>2014-08-13T21:15:27+02:00</updated>
+    <id>http://2moveit.com/blog/2014/08/13/change-debugtype-in-multiplecsproj</id>
+    <content type="html"><![CDATA[<p>To change settings of multiple C# projects is quite easy with <a href="https://www.ruby-lang.org">Ruby</a> and the <a href="https://rubygems.org/gems/nokogiri">Nokogiri gem</a>. The following script will change the DebugType of all Release configurations in multiple csproj files.</p>
+
+<p><div><script src='https://gist.github.com/e0d7c30a04e955794dbe.js?file=Change_debugtype_in_csproj.rb'></script>
+<noscript><pre><code>#encoding: utf-8
+require 'Nokogiri'
+
+desc &quot;Change the DebugType of a configuration in multiple C# project files.&quot;
+task :change_debug_type do
+    DEBUG_TYPE = 'pdbonly'
+    CONFIGURATION = 'Release'
+    PROJECT_DIR_REL = '../Source/**/*'
+            
+    project_files(PROJECT_DIR_REL).each do |file_name|
+        change(file_name, CONFIGURATION, DEBUG_TYPE)
+    end
+end
+
+def project_files(project_dir_rel)
+    scriptDir = File.dirname(__FILE__)
+    Dir[ File.join(scriptDir, &quot;#{project_dir_rel}/*.csproj&quot;)]
+end
+
+def change(file_name, configuration, debug_type)
+    puts '-------------------------------------------------------------------------------'
+    puts file_name
+    puts '-------------------------------------------------------------------------------'
+    puts
+    
+    @doc = Nokogiri::XML(File.open(file_name))
+    namespace = &quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;
+    nodes =@doc.xpath(&quot;//x:PropertyGroup&quot;,&quot;x&quot; =&gt; namespace)
+
+    nodes.each do |node|   
+        if node.values.to_s.include? configuration
+            puts node.values
+            type_node = node.at_xpath(&quot;x:DebugType&quot;, &quot;x&quot; =&gt; namespace)
+            if type_node == nil
+                new_node = Nokogiri::XML::Node.new(&quot;DebugType&quot;, @doc)
+                new_node.content = debug_type
+                node.add_child(new_node)
+                puts &quot;Created new node: #{new_node}&quot;
+            else     
+                puts type_node
+                puts &quot;Change #{type_node.content} to #{debug_type}&quot;
+                type_node.content = debug_type
+            end
+            puts
+        end 
+    end
+     
+    File.open(file_name, 'w') {|f| f.puts @doc.to_xml }
+    puts  '-------------------------------------------------------------------------------'
+    puts
+end
+
+
+task :default  =&gt; [:change_debug_type]</code></pre></noscript></div>
+</p>
+
+<p>At first the script gets all csproj files which are actually xml files. Each file is loaded into a @doc variable by using Nokogiri. Then the document is queried with XPath for the PropertyGroup tags. Each tag is validated if it matches the specified configuration. If it matches a query for the DebugType tag is executed. If it isn&rsquo;t found a new DebugType node with the specified DebugType value is created. Otherwise the available tag is changed. Finally the modified XML is written into the original project file.</p>
+]]></content>
+  </entry>
+  
+</feed>

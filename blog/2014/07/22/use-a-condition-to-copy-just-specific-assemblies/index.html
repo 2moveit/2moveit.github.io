@@ -113,7 +113,7 @@ To avoid this you can use a condition so that just the assemblies of one configu
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD)) Include=&quot;</span><span class="err">BrxMgd&quot;</span><span class="nt">&gt;</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD))&quot;</span> <span class="na">Include=</span><span class="s">&quot;BrxMgd&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>    <span class="nt">&lt;HintPath&gt;</span>lib\BrxMgd.dll<span class="nt">&lt;/HintPath&gt;</span>
 </span><span class='line'>    <span class="nt">&lt;Private&gt;</span>False<span class="nt">&lt;/Private&gt;</span>
 </span><span class='line'><span class="nt">&lt;/Reference&gt;</span>
@@ -167,6 +167,8 @@ To avoid this you can use a condition so that just the assemblies of one configu
         <a class="basic-alignment left" href="/blog/2014/07/21/use-one-code-base-for-autocad-and-bricscad/" title="Previous Post: Use one code base for AutoCAD and BricsCAD">&laquo; Use one code base for AutoCAD and BricsCAD</a>
       
       
+        <a class="basic-alignment right" href="/blog/2014/08/13/change-debugtype-in-multiplecsproj/" title="Next Post: Change DebugType in multiple C# projects.rb">Change DebugType in multiple C# projects.rb &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -178,6 +180,10 @@ To avoid this you can use a condition so that just the assemblies of one configu
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/13/change-debugtype-in-multiplecsproj/">Change DebugType in Multiple C# projects.rb</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/07/22/use-a-condition-to-copy-just-specific-assemblies/">Use a Condition to Copy Just Specific Assemblies</a>
@@ -193,10 +199,6 @@ To avoid this you can use a condition so that just the assemblies of one configu
     
       <li class="post">
         <a href="/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/">Jenkins Startet Nach Update Nicht Mehr</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/19/philips-hue-lampen-mit-bridge-koppeln/">Philips Hue Lampen Mit Bridge Koppeln</a>
       </li>
     
   </ul>

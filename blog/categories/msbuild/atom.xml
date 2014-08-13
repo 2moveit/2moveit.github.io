@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Msbuild | Kai-Zen]]></title>
   <link href="http://2moveit.com/blog/categories/msbuild/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-07-22T20:37:44+02:00</updated>
+  <updated>2014-08-13T22:21:24+02:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -30,7 +30,7 @@ To avoid this you can use a condition so that just the assemblies of one configu
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD)) Include=&quot;</span><span class="err">BrxMgd&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'> <span class="nt">&lt;Reference</span> <span class="na">Condition=</span><span class="s">&quot;$(DefineConstants.Contains(BRICSCAD))&quot;</span> <span class="na">Include=</span><span class="s">&quot;BrxMgd&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>HintPath<span class="ni">&amp;gt;</span>lib\BrxMgd.dll<span class="ni">&amp;lt;</span>/HintPath<span class="ni">&amp;gt;</span>
 </span><span class='line'><span class="ni">&amp;lt;</span>Private<span class="ni">&amp;gt;</span>False<span class="ni">&amp;lt;</span>/Private<span class="ni">&amp;gt;</span>
