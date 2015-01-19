@@ -9,7 +9,7 @@
   <meta name="author" content="Kai Timmermann">
 
   
-  <meta name="description" content="To change settings of multiple C# projects is quite easy with Ruby and the Nokogiri gem. The following script will change the DebugType of all &hellip;">
+  <meta name="description" content="Creating a windows service isn&rsquo;t that complicated as there is a Visual Studio template and a [documentation] (http://msdn.microsoft.com/de-de/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/17/rebuild-and-debug-your-windows-service-without-hassle/">Rebuild and Debug Your Windows Services Without Hassle</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-17T00:00:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Creating a windows service isn&rsquo;t that complicated as there is a Visual Studio template and a [documentation] (<a href="http://msdn.microsoft.com/de-de/library/zt39148a%28v=vs.110%29.aspx">http://msdn.microsoft.com/de-de/library/zt39148a%28v=vs.110%29.aspx</a>) available. If you want to start and debug the service then you have to install and start the service first. On a rebuild you have to stop the service everytime as the files are in use. To get rid of this annoying task you can use the pre-build and post-build events. You can add those events in your project <code>properties</code> &ndash;> <code>Build events</code>.</p>
+
+<p>In the pre-build event you just stop the service. In case of errors you just don&rsquo;t care about it e.g. if the service already stopped.</p>
+
+<pre><code>net stop NameOfMyService
+Exit /b 0
+</code></pre>
+
+<p>In the post-build event you have to do a little bit more than just starting the service. On the first run you have to register the service first. But you cannot use the target/output directory directly. Visual Studio cleans the build folder on a rebuild and if you want to stop the service your service files cannot be found. You have to copy the files to a different location first. Then you can register the service with the installutil.exe. Place the installutil.exe within your repository. So your collegues can start right away. The last step is to start the service. Again don&rsquo;t care about errors as the registration is just required once.</p>
+
+<pre><code>"%systemroot%\System32\xcopy" "$(TargetDir)*.*" "$(ProjectDir)..\..\..\Build" /Y /E
+"$(ProjectDir)..\..\..\Tools\InstallUtil\installutil.exe"  "$(ProjectDir)..\..\..\Build\$(TargetFileName)"
+net start NameOfMyService
+Exit /b 0
+</code></pre>
+
+<p>Everyone can checkout your repository now and rebuild the solution without hassle.
+Notice that I said rebuild and not start. You cannot use F5 in Visual Studio to start and debug the service. You have to attach the debugger to your service manually. The rebuild will just start the post-build event to register and start the service. Then open <code>Debug</code> &ndash;> <code>Attach to process…</code> and check <code>Show processes from all users</code>. Select your service process and <code>Attach</code>. Now you can set your breakpoints as required.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -640,6 +693,10 @@ By doing this the conditional compilation symbol is added in the project file (.
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/17/rebuild-and-debug-your-windows-service-without-hassle/">Rebuild and Debug Your Windows Services Without Hassle</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/13/change-debugtype-in-multiplecsproj/">Change DebugType in Multiple C# projects.rb</a>
       </li>
     
@@ -655,10 +712,6 @@ By doing this the conditional compilation symbol is added in the project file (.
         <a href="/blog/2014/07/20/bricscad-does-not-load-hello-world-command/">BricsCAD Does Not Load &#8220;Hello World&#8221; Command</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/06/28/jenkins-startet-nach-update-nicht-mehr/">Jenkins Startet Nach Update Nicht Mehr</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -672,7 +725,7 @@ By doing this the conditional compilation symbol is added in the project file (.
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Kai Timmermann -
+  Copyright &copy; 2015 - Kai Timmermann -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

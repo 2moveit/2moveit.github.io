@@ -4,7 +4,7 @@
   <title><![CDATA[Kai-Zen]]></title>
   <link href="http://2moveit.com/atom.xml" rel="self"/>
   <link href="http://2moveit.com/"/>
-  <updated>2014-08-13T22:21:24+02:00</updated>
+  <updated>2015-01-19T22:07:59+01:00</updated>
   <id>http://2moveit.com/</id>
   <author>
     <name><![CDATA[Kai Timmermann]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rebuild and Debug Your Windows Services Without Hassle]]></title>
+    <link href="http://2moveit.com/blog/2015/01/17/rebuild-and-debug-your-windows-service-without-hassle/"/>
+    <updated>2015-01-17T00:00:00+01:00</updated>
+    <id>http://2moveit.com/blog/2015/01/17/rebuild-and-debug-your-windows-service-without-hassle</id>
+    <content type="html"><![CDATA[<p>Creating a windows service isn&rsquo;t that complicated as there is a Visual Studio template and a [documentation] (<a href="http://msdn.microsoft.com/de-de/library/zt39148a%28v=vs.110%29.aspx">http://msdn.microsoft.com/de-de/library/zt39148a%28v=vs.110%29.aspx</a>) available. If you want to start and debug the service then you have to install and start the service first. On a rebuild you have to stop the service everytime as the files are in use. To get rid of this annoying task you can use the pre-build and post-build events. You can add those events in your project <code>properties</code> &ndash;> <code>Build events</code>.</p>
+
+<p>In the pre-build event you just stop the service. In case of errors you just don&rsquo;t care about it e.g. if the service already stopped.</p>
+
+<pre><code>net stop NameOfMyService
+Exit /b 0
+</code></pre>
+
+<p>In the post-build event you have to do a little bit more than just starting the service. On the first run you have to register the service first. But you cannot use the target/output directory directly. Visual Studio cleans the build folder on a rebuild and if you want to stop the service your service files cannot be found. You have to copy the files to a different location first. Then you can register the service with the installutil.exe. Place the installutil.exe within your repository. So your collegues can start right away. The last step is to start the service. Again don&rsquo;t care about errors as the registration is just required once.</p>
+
+<pre><code>"%systemroot%\System32\xcopy" "$(TargetDir)*.*" "$(ProjectDir)..\..\..\Build" /Y /E
+"$(ProjectDir)..\..\..\Tools\InstallUtil\installutil.exe"  "$(ProjectDir)..\..\..\Build\$(TargetFileName)"
+net start NameOfMyService
+Exit /b 0
+</code></pre>
+
+<p>Everyone can checkout your repository now and rebuild the solution without hassle.
+Notice that I said rebuild and not start. You cannot use F5 in Visual Studio to start and debug the service. You have to attach the debugger to your service manually. The rebuild will just start the post-build event to register and start the service. Then open <code>Debug</code> &ndash;> <code>Attach to process…</code> and check <code>Show processes from all users</code>. Select your service process and <code>Attach</code>. Now you can set your breakpoints as required.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Change DebugType in Multiple C# projects.rb]]></title>
